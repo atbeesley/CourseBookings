@@ -1,6 +1,8 @@
 package com.codeclan.example.CourseBookings.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +24,11 @@ public class Customer {
     @Column(name = "age")
     private int age;
 
+    @JsonIgnoreProperties("customer")
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
-    public Customer(String name, String town, int age, Booking bookings) {
+    public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
         this.age = age;
@@ -75,4 +78,9 @@ public class Customer {
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
     }
+
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
+    }
+
 }
