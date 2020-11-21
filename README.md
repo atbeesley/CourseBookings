@@ -3,7 +3,7 @@ A RESTful API for a course booking service, using Java &amp; the Spring framewor
 
 Getting started 
 
-1. Create a database using PostgreSQL called "bookingstracker". 
+1. Create a database in your local environment using PostgreSQL called "bookingstracker". 
 2. Git clone & open using an IDE of your choice. 
 3. Run main. 
 4. Go to localhost:8080 in your browser. 
